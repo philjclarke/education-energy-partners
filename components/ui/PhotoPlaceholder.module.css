@@ -1,0 +1,38 @@
+.photo {
+  position: relative;
+  display: grid;
+  align-content: space-between;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  min-height: 320px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.light {
+  background: repeating-linear-gradient(135deg, var(--hatch-a) 0 14px, var(--hatch-b) 14px 28px);
+}
+
+.dark {
+  background: repeating-linear-gradient(135deg, var(--navy-2) 0 14px, #1f3b5a 14px 28px);
+}
+
+.brief {
+  display: grid;
+  gap: 0.25rem;
+  max-width: 34ch;
+  padding: 0.7rem 0.85rem;
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--navy);
+  font-size: var(--step--1);
+  line-height: 1.45;
+}
+
+.brief strong {
+  font-stretch: var(--narrow);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--slate);
+}

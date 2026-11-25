@@ -1,0 +1,50 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--navy);
+}
+
+.logo[data-tone="light"] {
+  color: var(--paper);
+}
+
+.mark {
+  height: 26px;
+  width: auto;
+  flex: none;
+}
+
+.divider {
+  width: 1px;
+  height: 26px;
+  background: currentColor;
+  opacity: 0.25;
+}
+
+.wordmark {
+  font-stretch: 108%;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: -0.005em;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.lg .mark {
+  height: 34px;
+}
+
+.lg .divider {
+  height: 34px;
+}
+
+.lg .wordmark {
+  font-size: 1.15rem;
+}
+
+@media (max-width: 380px) {
+  .wordmark {
+    font-size: 0.9rem;
+  }
+}

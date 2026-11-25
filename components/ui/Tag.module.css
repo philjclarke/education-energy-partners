@@ -1,0 +1,37 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 2px;
+  font-stretch: var(--narrow);
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.illustrative {
+  background: var(--amber-tint);
+  color: var(--amber);
+}
+
+.policy {
+  background: var(--green-tint);
+  color: var(--green);
+}
+
+.category {
+  background: var(--white);
+  color: var(--slate);
+  border: 1px solid var(--rule);
+}

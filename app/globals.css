@@ -1,0 +1,224 @@
+/*
+ * Education Energy Partners: design tokens and base styles.
+ * Brand direction "Through-line" (first pass, 25 Nov 2026).
+ * Every colour on the site comes from these tokens: change a value here and the whole site follows.
+ */
+:root {
+  /* Colour */
+  --navy: #10243b;
+  --navy-2: #1a3350;
+  --navy-rule: #2a4664;
+  --green: #14775d;
+  --green-hover: #0f6650;
+  --green-tint: #e1f0ea;
+  --signal: #5ccb9f;
+  --signal-hover: #7ad8b3;
+  --paper: #f6f8f6;
+  --mist: #ebf0ed;
+  --white: #ffffff;
+  --slate: #526371;
+  --slate-on-navy: #a9b8c4;
+  --rule: #d5ddd8;
+  --amber: #9a6212;
+  --amber-tint: #f6ebda;
+  --hatch-a: #e7ece9;
+  --hatch-b: #dde4e0;
+
+  /* Type */
+  --font-sans: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-source-serif), Georgia, "Times New Roman", serif;
+  --wide: 116%;
+  --narrow: 82%;
+
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.625rem;
+  --step-3: clamp(1.75rem, 1.2rem + 1.8vw, 2.25rem);
+  --step-4: clamp(2.25rem, 1.4rem + 3.4vw, 3.5rem);
+
+  /* Space and shape */
+  --container: 1200px;
+  --gutter: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+  --section: clamp(4rem, 3rem + 4vw, 7rem);
+  --radius: 3px;
+  --radius-lg: 6px;
+  --shadow-float: 0 18px 40px -18px rgba(16, 36, 59, 0.4);
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 220ms;
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--navy);
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  text-wrap: balance;
+  font-weight: 650;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + var(--gutter) + var(--gutter-r));
+  margin-inline: auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter-r);
+}
+
+.section {
+  padding-block: var(--section);
+}
+
+/* Type helpers */
+.display {
+  font-stretch: var(--wide);
+  font-weight: 700;
+  font-size: var(--step-4);
+  line-height: 1.03;
+  letter-spacing: -0.022em;
+}
+
+.h2 {
+  font-stretch: var(--wide);
+  font-weight: 650;
+  font-size: var(--step-3);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.h3 {
+  font-weight: 650;
+  font-size: var(--step-1);
+  line-height: 1.25;
+}
+
+.lede {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  max-width: 58ch;
+}
+
+.muted {
+  color: var(--slate);
+}
+
+.eyebrow {
+  font-stretch: var(--narrow);
+  font-weight: 650;
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--green);
+}
+
+/* Surfaces */
+.on-navy {
+  background: var(--navy);
+  color: var(--paper);
+}
+
+.on-navy .muted {
+  color: var(--slate-on-navy);
+}
+
+.on-navy .eyebrow {
+  color: var(--signal);
+}
+
+.on-white {
+  background: var(--white);
+}
+
+.on-mist {
+  background: var(--mist);
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: var(--gutter);
+  top: -100px;
+  z-index: 100;
+  background: var(--navy);
+  color: var(--paper);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: calc(env(safe-area-inset-top, 0px) + 0.75rem);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

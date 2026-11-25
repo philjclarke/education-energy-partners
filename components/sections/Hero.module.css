@@ -1,0 +1,79 @@
+.hero {
+  padding-block: clamp(2.5rem, 2rem + 3vw, 5rem) clamp(3.5rem, 2.5rem + 4vw, 6rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: clamp(2rem, 1rem + 4vw, 4.5rem);
+  align-items: center;
+}
+
+.copy {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: start;
+}
+
+.copy h1 {
+  max-width: 13ch;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.qualifier {
+  display: flex;
+  gap: 0.65rem;
+  max-width: 48ch;
+  font-size: var(--step--1);
+  line-height: 1.5;
+  color: var(--slate);
+}
+
+.qualifier::before {
+  content: "";
+  flex: none;
+  width: 16px;
+  height: 3px;
+  margin-top: 0.6em;
+  background: var(--green);
+}
+
+:global(.on-navy) .qualifier {
+  color: var(--slate-on-navy);
+}
+
+:global(.on-navy) .qualifier::before {
+  background: var(--signal);
+}
+
+.media {
+  min-width: 0;
+}
+
+.photo {
+  min-height: clamp(420px, 38vw, 560px);
+}
+
+.overlay {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .copy h1 {
+    max-width: 16ch;
+  }
+
+  .photo {
+    min-height: 420px;
+  }
+}

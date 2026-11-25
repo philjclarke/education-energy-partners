@@ -1,0 +1,86 @@
+.model {
+  margin: 0;
+  display: grid;
+  gap: 0;
+  padding: clamp(1.25rem, 1rem + 1.5vw, 2rem);
+  border: 1px solid var(--navy-rule);
+  border-radius: var(--radius-lg);
+  background: var(--navy-2);
+}
+
+.box {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--navy-rule);
+  border-radius: var(--radius);
+  background: var(--navy);
+  font-size: 0.9rem;
+  color: var(--slate-on-navy);
+}
+
+.box strong {
+  color: var(--paper);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.kicker {
+  font-stretch: var(--narrow);
+  font-weight: 650;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--slate-on-navy);
+}
+
+.eep {
+  border: 1.5px solid var(--signal);
+}
+
+.eep .kicker {
+  color: var(--signal);
+}
+
+/* The through-line connecting each tier */
+.line {
+  justify-self: center;
+  width: 6px;
+  height: 28px;
+  background: var(--signal);
+}
+
+.partners {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+  position: relative;
+  padding-top: 6px;
+}
+
+.partners::before {
+  content: "";
+  position: absolute;
+  left: 16.5%;
+  right: 16.5%;
+  top: 0;
+  height: 6px;
+  background: var(--signal);
+}
+
+.note {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--slate-on-navy);
+}
+
+@media (max-width: 520px) {
+  .partners {
+    grid-template-columns: 1fr;
+    padding-top: 0;
+  }
+
+  .partners::before {
+    display: none;
+  }
+}

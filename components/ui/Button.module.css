@@ -1,0 +1,110 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 48px;
+  padding: 0.7rem 1.25rem;
+  border-radius: var(--radius);
+  border: 1.5px solid transparent;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+
+.primary {
+  background: var(--green);
+  color: var(--white);
+}
+
+.primary:hover {
+  background: var(--green-hover);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+
+.secondary:hover {
+  background: var(--navy);
+  color: var(--paper);
+}
+
+.signal {
+  background: var(--signal);
+  color: var(--navy);
+}
+
+.signal:hover {
+  background: var(--signal-hover);
+}
+
+.ghost-light {
+  background: transparent;
+  color: var(--paper);
+  border-color: var(--slate-on-navy);
+}
+
+.ghost-light:hover {
+  border-color: var(--paper);
+  background: var(--navy-2);
+}
+
+.btn:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+.signal:focus-visible,
+.ghost-light:focus-visible {
+  outline-color: var(--signal);
+}
+
+.arrow {
+  position: relative;
+  width: 1em;
+  height: 2px;
+  background: currentColor;
+  flex: none;
+  transition: transform var(--dur) var(--ease);
+}
+
+.arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -4px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.btn:hover .arrow,
+.textLink:hover .arrow {
+  transform: translateX(3px);
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+  min-height: 44px;
+}
+
+.textLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+:global(.on-navy) .textLink {
+  color: var(--signal);
+}

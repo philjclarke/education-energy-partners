@@ -1,0 +1,128 @@
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
+  gap: clamp(2rem, 1rem + 4vw, 5rem);
+  align-items: start;
+}
+
+.copy {
+  display: grid;
+  gap: 1.25rem;
+  justify-items: start;
+}
+
+.tableWrap {
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 1rem 1rem 1rem 0;
+  border-bottom: 1px solid var(--navy-rule);
+}
+
+.table thead th {
+  font-stretch: var(--narrow);
+  font-weight: 650;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--signal);
+  padding-top: 0;
+}
+
+.table tbody th {
+  width: 34%;
+  font-weight: 400;
+}
+
+.table td {
+  color: var(--paper);
+}
+
+.route {
+  display: block;
+  font-weight: 650;
+  font-size: 1.05rem;
+  color: var(--paper);
+  margin-bottom: 0.3rem;
+}
+
+.review {
+  display: block;
+  font-size: var(--step--1);
+  line-height: 1.45;
+  color: var(--slate-on-navy);
+}
+
+.footnote {
+  margin-top: 1rem;
+  font-size: var(--step--1);
+  color: var(--slate-on-navy);
+  max-width: 70ch;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Phones: each route becomes a stacked card instead of a sideways-scrolling table */
+@media (max-width: 640px) {
+  .table {
+    min-width: 0;
+  }
+
+  .table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .table tbody tr {
+    display: grid;
+    padding-block: 1.25rem;
+    border-bottom: 1px solid var(--navy-rule);
+  }
+
+  .table tbody th,
+  .table td {
+    display: grid;
+    width: auto;
+    padding: 0.35rem 0;
+    border: 0;
+  }
+
+  .table tbody th {
+    padding-bottom: 0.6rem;
+  }
+
+  .table td {
+    grid-template-columns: 9.5rem 1fr;
+    gap: 1rem;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    font-stretch: var(--narrow);
+    font-weight: 650;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--signal);
+    padding-top: 0.2em;
+  }
+}

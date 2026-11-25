@@ -1,0 +1,120 @@
+.card {
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 460px;
+  padding: 1rem 1rem 0.8rem;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  color: var(--navy);
+  box-shadow: var(--shadow-float);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.title {
+  font-weight: 650;
+  font-size: 0.92rem;
+}
+
+.toggle {
+  display: inline-flex;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.toggle button {
+  min-height: 44px;
+  padding: 0.35rem 0.8rem;
+  border: 0;
+  background: var(--white);
+  color: var(--slate);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toggle button[aria-pressed="true"] {
+  background: var(--navy);
+  color: var(--paper);
+}
+
+.toggle button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: -2px;
+}
+
+.chart {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.axis {
+  stroke: var(--slate);
+  stroke-opacity: 0.5;
+  stroke-width: 1;
+}
+
+.grid,
+.solar {
+  transition: y 420ms var(--ease), height 420ms var(--ease);
+}
+
+.grid {
+  fill: var(--navy);
+}
+
+.solar {
+  fill: var(--green);
+}
+
+.tick {
+  fill: var(--slate);
+  font-size: 11px;
+  font-family: var(--font-sans);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: var(--slate);
+}
+
+.legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 0.4rem;
+  border-radius: 1px;
+  vertical-align: -1px;
+}
+
+.keyGrid {
+  background: var(--navy);
+}
+
+.keySolar {
+  background: var(--green);
+}
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  color: var(--slate);
+}

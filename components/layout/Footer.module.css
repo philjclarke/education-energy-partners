@@ -1,0 +1,132 @@
+.footer {
+  padding-block: 4.5rem 2rem;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--navy-rule);
+}
+
+.top > * {
+  min-width: 0;
+}
+
+.brand {
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+}
+
+.brand p {
+  max-width: 44ch;
+}
+
+.alerts {
+  display: grid;
+  gap: 0.9rem;
+  justify-items: start;
+  padding: 1.75rem;
+  border: 1px solid var(--navy-rule);
+  border-radius: var(--radius-lg);
+}
+
+.alertsTitle {
+  font-stretch: var(--wide);
+  font-size: var(--step-1);
+  line-height: 1.2;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
+  padding-block: 3rem;
+  border-bottom: 1px solid var(--navy-rule);
+}
+
+.colTitle {
+  font-stretch: var(--narrow);
+  font-weight: 650;
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--signal);
+  margin-bottom: 0.75rem;
+}
+
+.links ul {
+  list-style: none;
+  display: grid;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  color: var(--paper);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.links p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.partnerLink {
+  font-weight: 600;
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  font-size: var(--step--1);
+  color: var(--slate-on-navy);
+}
+
+.bottom ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  list-style: none;
+}
+
+.bottom a {
+  color: var(--slate-on-navy);
+  text-decoration: none;
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+
+.bottom a:hover {
+  color: var(--paper);
+  text-decoration: underline;
+}
+
+@media (max-width: 860px) {
+  .top {
+    grid-template-columns: 1fr;
+  }
+
+  .links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .links {
+    grid-template-columns: 1fr;
+  }
+}
